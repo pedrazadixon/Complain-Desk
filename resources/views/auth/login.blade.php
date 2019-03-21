@@ -21,10 +21,10 @@
                 <!-- Authentication Links -->
                 @guest
                 <li>
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('app.login') }}</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('app.register') }}</a>
                 </li>
                 @else
                 <li class="nav-item dropdown">
@@ -37,7 +37,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Logout
+                            {{ __('app.logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -66,11 +66,11 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail or Telephone</label>
+                        <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('app.email') }}</label>
 
                         <div class="col-md-6">
                             <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                                placeholder="kwasi@test.com or 0543896548" required autofocus> @if ($errors->has('email'))
+                                placeholder="" required autofocus> @if ($errors->has('email'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('email') }}</strong>
                             </span>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('app.password') }}</label>
 
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
@@ -95,7 +95,7 @@
                         <div class="col-md-6 offset-md-4">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="remember" {{ old( 'remember') ? 'checked' : '' }}> Remember Me
+                                    <input type="checkbox" name="remember" {{ old( 'remember') ? 'checked' : '' }}> {{ __('app.remember_me') }}
                                 </label>
                             </div>
                         </div>
@@ -104,11 +104,11 @@
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">
-                                Login
+                                {{ __('app.login') }}
                             </button>
 
                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                Forgot Your Password?
+                                {{ __('app.forgot_your_password') }}
                             </a>
                         </div>
                     </div>
