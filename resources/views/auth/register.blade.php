@@ -21,10 +21,10 @@
                 <!-- Authentication Links -->
                 @guest
                 <li>
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('app.login') }}</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('app.register') }}</a>
                 </li>
                 @else
                 <li class="nav-item dropdown">
@@ -37,7 +37,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Logout
+                            {{ __('app.logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -66,10 +66,10 @@
                         <div class="form-group row">
 
                             <div class="col-md-12">
-                                <label for="name">Full Name</label>
+                                <label for="name">{{ __('app.full_name') }}</label>
 
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"
-                                    placeholder="Kwasi Addae" required autofocus> @if ($errors->has('name'))
+                                    placeholder="" required autofocus> @if ($errors->has('name'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
@@ -79,10 +79,10 @@
 
                         <div class="form-row">
                             <div class="col-md-8">
-                                <label for="email">E-Mail Address</label>
+                                <label for="email">{{ __('app.email') }}</label>
 
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                                    placeholder="kwasi@test.com" required> @if ($errors->has('email'))
+                                    placeholder="" required> @if ($errors->has('email'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
@@ -90,10 +90,10 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="telephone">Telephone</label>
+                                <label for="telephone">{{ __('app.telephone') }}</label>
 
                                 <input id="telephone" type="number" class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone"
-                                    value="{{ old('telephone') }}" placeholder="0543896548" required> @if ($errors->has('telephone'))
+                                    value="{{ old('telephone') }}" placeholder="" required> @if ($errors->has('telephone'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('telephone') }}</strong>
                                 </span>
@@ -105,9 +105,9 @@
                         <div class="form-row">
 
                             <div class="col-md-6">
-                                <label for="password">Password</label>
+                                <label for="password">{{ __('app.password') }}</label>
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                    placeholder="Must be more than 8 Characters" required minlength="8"> @if ($errors->has('password'))
+                                    placeholder="" required minlength="8"> @if ($errors->has('password'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
@@ -115,8 +115,8 @@
                             </div>
 
                             <div class="col-md-6">
-                                <label for="password-confirm">Confirm Password</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Repeat Password`"
+                                <label for="password-confirm">{{ __('app.confirm_password') }}</label>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder=""
                                     required>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
 
                         <div>
                             <button type="submit" class="btn btn-primary">
-                                Register
+                                {{ __('app.register') }}
                             </button>
                         </div>
                     </form>
