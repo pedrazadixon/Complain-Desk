@@ -11,7 +11,7 @@
                         @if (!Auth::user()->is_admin)
                         <a href="{{ url('/tickets') }}" class="btn btn-md" role="button" style="background:#443FFF;color:white;font-size:16px; font-weight:bold"
                             aria-pressed="true">
-                            <span class="fa fa-ticket"></span> Open New Ticket
+                            <span class="fa fa-ticket"></span> {{ __('app.open_new_ticket') }}
                         </a>
                         @endif
                     </h1>
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="card" style="">
-                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Total Tickets</div>
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">{{ __('app.total_tickets') }}</div>
                         <div class="card-body">
                             <div>
                                 <div style="float:left">
@@ -47,7 +47,7 @@
 
                 <div class="col-sm-4">
                     <div class="card" style="">
-                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Opened Tickets</div>
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">{{ __('app.opened_tickets') }}</div>
 
                         <div class="card-body ">
                             <div>
@@ -73,7 +73,7 @@
 
                 <div class="col-sm-4">
                     <div class="card " style="">
-                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">Closed Tickets</div>
+                        <div class="card-header text-right" style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">{{ __('app.closed_tickets') }}</div>
                         <div class="card-body ">
                             <div>
                                 <div style="float:left ">
@@ -99,14 +99,14 @@
 
             <br>
             <br> @if ($tickets->isEmpty())
-            <p>No Tickets have been created.</p>
+            <p>{{ __('app.no_tickets_have_been_created') }}.</p>
             @else
             <div class="card-body">
                 <table class="table table-responsive-md table-hover">
                     <thead style="background:#2737A6;color:white; font-size:17px; font-weight:bold;">
                         <tr>
                             <th>Ticket ID</th>
-                            <th> Title</th>
+                            <th> {{ __('app.title') }}</th>
                             <th> Category</th>
                             <th> Status</th>
                             <th> Date Opened</th>
